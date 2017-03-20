@@ -1,3 +1,4 @@
+package ruin;
 
 public class Account {
 	public double account1;

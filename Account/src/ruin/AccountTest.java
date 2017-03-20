@@ -1,3 +1,4 @@
+package ruin;
 
 import java.util.Scanner;
 
