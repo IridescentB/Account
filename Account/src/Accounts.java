@@ -1,12 +1,11 @@
 
-public class Accounts {
+public abstract class Accounts {
 	
 	private double balance;
 	
 	public void Accounts(double b){
 		balance = b;
 	}
-	
 	protected void setBalance(double money){
 		balance = money;
 	}
@@ -19,4 +18,6 @@ public class Accounts {
 	public void debit(double money){
 		balance -= money;
 	}
+	public abstract double getWithdrawableAccount();
+	public abstract double passTime(int time);
 };

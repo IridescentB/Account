@@ -2,8 +2,8 @@ import java.util.Scanner;
 
 public class AccountsTest {
 	public static void main(String[] args){
-		CheckingAccount account1 = new CheckingAccount(-20,0.07,0.10);
-		CheckingAccount account2 = new CheckingAccount(-20,0.07,0.10);
+		CheckingAccount account1 = new CheckingAccount(-20,0.10,0.07);
+		CheckingAccount account2 = new CheckingAccount(-20,0.10,0.07);
 		Scanner input = new Scanner(System.in);
 		
 		System.out.print("Adding money to account1: "); //초기 자본금 설정 (account1)
@@ -29,7 +29,7 @@ public class AccountsTest {
 			account2.debit(wd2);
 			if(account2.getBalance() < 0){
 				System.out.print("Your balance is under 0..\n");
-				return;
+				//return;
 			}
 			System.out.printf("account1 balance: %f\n", account1.getBalance());
 			System.out.printf("account2 balance: %f\n", account2.getBalance());
