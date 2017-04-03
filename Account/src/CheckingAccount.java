@@ -59,4 +59,12 @@ public class CheckingAccount extends Accounts {
 		return (getBalance() < -creditLimit);
 		
 	}
+	
+	public double estimateValue(int month){
+		return getBalance()*Math.pow((1+interest),month);
+	}
+	
+	public String toString(){
+		return String.format("CheckingAccount_Balance: $ %.2f\n", getBalance());
+	}
 }

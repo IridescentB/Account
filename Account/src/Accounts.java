@@ -1,5 +1,5 @@
 
-public abstract class Accounts {
+public abstract class Accounts implements Valuable {
 	
 	private double balance;
 	
@@ -20,4 +20,8 @@ public abstract class Accounts {
 	}
 	public abstract double getWithdrawableAccount();
 	public abstract double passTime(int time);
+	
+	public String toString(){
+		return String.format("Account_Balance: $ %d\n", getBalance());
+	}
 };
