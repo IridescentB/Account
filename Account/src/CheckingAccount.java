@@ -13,8 +13,14 @@ public class CheckingAccount extends Accounts {
 	}
 	
 	@Override
-	public void debit(double money){
-		setBalance(getBalance()-money);
+	public void debit(double money) throws Exception {
+		if(money < 0){
+			throw new NegativeDebitException("음수 입력!");
+		} else if ((getBalance()-money) < creditLimit) {
+			throw new NonDebitAmountException("Debit Amount exceeded account balance.");
+		} else {
+			setBalance(getBalance()-money);
+		}
 		/*		
 		if(getBalance() > -creditLimit){
 			System.out.print("Exceeded your credit limit.\n");
@@ -42,10 +48,10 @@ public class CheckingAccount extends Accounts {
 	@Override
 	public double passTime(int time){
 		if(getBalance() > 0) {
-			setBalance(getBalance()*(1+interest)*time);
+			setBalance(getBalance()*Math.pow((1+interest), time));
 			return getBalance();
 		} else if(getBalance() > -creditLimit){
-			setBalance(getBalance()*(1+loanInterest*time));
+			setBalance(getBalance()*Math.pow((1+loanInterest), time));
 			return getBalance();
 		} else {
 			return getBalance();

@@ -15,7 +15,7 @@ public abstract class Accounts implements Valuable {
 	public void credit(double money){
 		balance += money;
 	}
-	public void debit(double money){
+	public void debit(double money) throws Exception {
 		balance -= money;
 	}
 	public abstract double getWithdrawableAccount();

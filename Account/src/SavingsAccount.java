@@ -9,9 +9,10 @@ public class SavingsAccount extends Accounts {
 	}
 	
 	@Override
-	public void debit(double money){
+	public void debit(double money) throws Exception {
 		if(passedTime < 12){
-			System.out.println("아직 출금할 수 없습니다!\n");
+			// System.out.println("아직 출금할 수 없습니다!\n");
+			throw new NotWithdrawalException("아직 출금할 수 없습니다!\n");
 		} else {
 			setBalance(getBalance() - money);
 		}
