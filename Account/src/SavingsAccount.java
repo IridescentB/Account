@@ -40,8 +40,25 @@ public class SavingsAccount extends Accounts {
 		}
 	}
 	
+	@Override
+	public double passTime(){
+		passedTime += 1;
+		if(passedTime < 12) {
+			return getBalance();
+		} else if(passedTime == 12) {
+			setBalance(getBalance()*Math.pow((1+interest), 12));
+			return getBalance();
+		} else {
+			return getBalance();
+		}
+	}
+	
 	public double estimateValue(int month){
 		return getBalance()*Math.pow((1+interest),month);
+	}
+	
+	public double estimateValue(){
+		return getBalance()*(1+interest);
 	}
 	
 	public String toString(){

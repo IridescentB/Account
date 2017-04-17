@@ -12,6 +12,10 @@ public class Human implements Valuable {
 		return Double.POSITIVE_INFINITY;
 	}
 	
+	public double estimateValue(){
+		return Double.POSITIVE_INFINITY;
+	}
+	
 	public String toString(){
 		System.out.printf("Human name: %s\n", name);
 		return String.format("registered age: %d\n", age);
