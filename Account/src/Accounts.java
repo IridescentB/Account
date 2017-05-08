@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 
 public abstract class Accounts implements Valuable {
 	
@@ -21,6 +22,21 @@ public abstract class Accounts implements Valuable {
 	public abstract double getWithdrawableAccount();
 	public abstract double passTime(int time);
 	public abstract double passTime();
+	
+	public static double sumForAccount(ArrayList<Accounts> list){
+		double sum = 0;
+		for(Accounts account : list){
+			sum += account.getBalance();
+		}
+		return sum;
+	}
+	
+	public static void passTimeForList(ArrayList<Accounts> list, int month){
+		for(Accounts account : list){
+			account.passTime(month);
+		}
+	}
+	
 	
 	public String toString(){
 		return String.format("Account_Balance: $ %d\n", getBalance());

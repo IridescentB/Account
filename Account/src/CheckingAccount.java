@@ -48,7 +48,8 @@ public class CheckingAccount extends Accounts {
 	@Override
 	public double passTime(int time){
 		if(getBalance() > 0) {
-			setBalance(getBalance()*Math.pow((1+interest), time));
+			setBalance(getBalance()*(1+interest*time));
+			//setBalance(getBalance()*Math.pow((1+interest), time));
 			return getBalance();
 		} else if(getBalance() > -creditLimit){
 			setBalance(getBalance()*(1+loanInterest)*time);
